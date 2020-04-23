@@ -1,0 +1,41 @@
+<h1>Мои заказы</h1>
+
+{{#if orders.length}}
+    {{#each orders}}
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">
+                            Заказ <strong>{{_id}}</strong>
+                        </span>
+                        <p>Дата: <span class="date">{{date}}</span></p>
+                        <p><em>Имя: {{user.userId.name}}</em> ({{user.userId.mail}})</p>
+                        <ol>
+                            {{#each courses}}
+                                <li>{{title}} &times; {{count}}</li>
+                            {{/each}}
+                        </ol>
+
+                        <hr>
+
+                        <p>Цена всего: <span class="price">{{price}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+{{else}}
+    <p>Заказов пока нет</p>
+{{/if}}
+
+
+
+
+
+
+
+
+
+
+
